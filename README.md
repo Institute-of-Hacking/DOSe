@@ -1,5 +1,7 @@
 # BatchOS
 
+# Current release isn't working. Sorry about that.
+
 BatchOS is an operating system made entirely in Batch.
 
 Sounds fun, huh?
