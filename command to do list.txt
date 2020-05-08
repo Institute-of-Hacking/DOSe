@@ -1,0 +1,8 @@
+help and ?
+date
+who
+whoami
+dir and ls
+df
+ps
+uptime
