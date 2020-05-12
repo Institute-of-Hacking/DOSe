@@ -2,7 +2,7 @@
 
 ## Supported Versions
 
-v0.5 is currently the only supported version, but there will be more (and working) versions to come later.
+v1.0 is currently the only working version, but there will be more (hopefully working) versions to come later.
 
 | Version | Supported          |
 | ------- | ------------------ |
