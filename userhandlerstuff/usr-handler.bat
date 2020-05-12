@@ -13,7 +13,7 @@ call login.bat
 goto ex1
 
 :pswd-reset
-:: waiting for zcj
+:: very buggy
 goto ex1
 
 :usr-creation
@@ -27,7 +27,7 @@ goto ex1
 
 :usr-controled-pswd-reset
 call usr-pswd-change.bat
-goto ex1
+goto ex1is 
 
 :user-requests
 call user-requests.bat
