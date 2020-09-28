@@ -1,4 +1,3 @@
-REM test comment
 :sakura
 start https://www.youtube.com/watch?v=jqpFjsMtCb0
 echo ^%Zhara +star Sakura. good job
