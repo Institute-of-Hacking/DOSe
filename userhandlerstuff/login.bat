@@ -52,6 +52,6 @@ if not defined S (
 goto HInput
 :: hide password code end
 :invalid-user
-Echo the user you enterd does not exist
+Echo the user you entered does not exist
 echo please enter a valid user
 goto start
