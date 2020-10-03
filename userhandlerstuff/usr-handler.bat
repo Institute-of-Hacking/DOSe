@@ -40,6 +40,7 @@ goto ex1
 :ex
 cd errors
 start reserr.vbs
+:: yes zhara this is pure batch
 exit /b
 
 :ex1
