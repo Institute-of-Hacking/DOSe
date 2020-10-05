@@ -1,5 +1,11 @@
 # ToDo List for BatchOS
 
-Add the user files
+Finalize user creation
+
+Improve user files
 
 Add actual commands
+
+Get batman up and running
+
+Vnet alternative
