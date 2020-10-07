@@ -13,4 +13,9 @@ exit
 echo %DATE%
 exit
 
-
+:whoami
+(
+set /p token=
+set /p username=
+)<user.info
+exit
