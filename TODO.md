@@ -10,4 +10,4 @@ Add actual commands
 
 Get batman up and running
 
-Vnet alternative
+Implement multi-user functionality
