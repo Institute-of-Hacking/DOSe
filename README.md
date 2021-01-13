@@ -4,7 +4,7 @@ By 25zcj01, NoIDont-zhara, and ihaveroot
 
 MIT License
 
-Copyright (c) 2020 Institute of Hacking
+Copyright (c) 2021 25zcj01 and the Institute of Hacking
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -25,6 +25,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 BatchOS is a free, open source operating system (barely) that runs on anything that runs .bat files. On Windows, just run the file. 
-For the Linux (aka the better operating system) users out there, get Wine at https://WineHQ.org
+For the Linux users out there, get Wine at https://WineHQ.org/
 There is a good amount of documentation on that site and on other places on the internet.
-OS/2 users (you naughty boy) have native Batchfile support. Really.
+OS/2 users have native Batchfile support. Really.
