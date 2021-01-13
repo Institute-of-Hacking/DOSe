@@ -1,57 +1,65 @@
 @echo off
-break off
+
+goto end-of-functions
+
+:passhash 
+echo %hashing% > pswd1
+set filename=pswd1
+setlocal enabledelayedexpansion
+set /a count=1
+for /f "skip=1 delims=:" %%B in ('CertUtil -hashfile "%filename%" sha512') do (
+if !count! equ 1 set "sha512=%%B"
+set /a count+=1
+)
+set "sha512=%sha512: =%
+set hashed=%sha512%
+endlocal
+del pswd1
+goto %place%
+:hmm2"
+:end-of-functions
+
+:user check start
+if not exist "%sysdir%\users\%name%\user-info" goto invalid_user else (
+	(
+	set /p permission=
+	set /p passhash=
+	set /p name=
+	)<"%sysdir%\users\%name%\user_info"
+	if permission=="" goto invalid_user
+	if passhash=="" goto invalid_user
+	if name=="" goto invalid_user
+	if permission==1 if not exist "%sysdir%\users\%name%\gst-usr.bat" goto invalid_user else set usr_type = gst_usr.bat
+	if permission==2 if not exist "%sysdir%\users\%name%\low-priv.bat" goto invalid_user else set usr_type = low_priv.bat
+	if permission==3 if not exist "%sysdir%\users\%name%\standard.bat" goto invalid_user else set usr_type = standard.bat
+	if permission==4 if not exist "%sysdir%\users\%name%\admin.bat" goto invalid_user else set usr_type = admin.bat
+	if permission==5 if not exist "%sysdir%\users\%name%\root.bat" goto invalid_user else set usr_type = root.bat
+)
+:user check end
 :start
-cls
-cd ..
-cd users
-dir /b
+set /p %pass%=Enter the password for %name%: 
 
-set /p user=Enter the name of your user:
-if not exist "%user%\existance.hands" goto invalid-user
-:password
-:: hide password code begin
-@echo off &setlocal
-
-<nul set /p "=Password: "
-call :HInput pw
-setlocal EnableDelayedExpansion
-
-
-
-
-:HInput [ByRef_VarName]
-:: inspired by Carlos
-:: improved by pieh-ejdsch
-if "%__HI__%" neq "__HI__" (
-  setlocal DisableDelayedExpansion
-  set "S=" &set "N=0" &set "__HI__=__HI__"
-  for /f %%i in ('"prompt;$h&for %%i in (1) do rem"') do set "BS=%%i"
-)
-set "C="
-for /f "eol=1 delims=" %%i in ('xcopy /lwq "%~f0" :\') do set "C=%%i"
-set "C=%C:~-1%"
-setlocal EnableDelayedExpansion
-if not defined C (
-  echo(
-  if "%~1"=="" (
-    echo(!S!
-    endlocal &endlocal &exit /b %N%
-  ) else (
-    if defined S (
-      for /f delims^=^ eol^= %%i in ("!S!") do endlocal &endlocal &set "%~1=%%i" &exit /b %N%
-    ) else endlocal &endlocal &set "%~1=" &exit /b 0
-  )
-)
-if "!BS!"=="!C!" (
-  set "C="
-  if defined S set /a "N -= 1" &set "S=!S:~,-1!" &<nul set /p "=%BS% %BS%"
-) else set /a "N += 1" &<nul set /p "=*"
-if not defined S (
-  endlocal &set "N=%N%" &set "S=%C%"
-) else for /f delims^=^ eol^= %%i in ("!S!") do endlocal &set "N=%N%" &set "S=%%i%C%"
-goto HInput
-:: hide password code end
-:invalid-user
-Echo the user you entered does not exist
-echo please enter a valid user
-goto start
+set "sha512=%sha512: =%
+:hmm"
+set reg-psswd=%sha512%
+endlocal
+del pswd1
+attrib +R user_info
+attrib +H user_info
+attrib +S user_info
+attrib +I user_info
+if passhash==%reg-psswd% goto login_succ else goto invalid_pass
+:login_succ
+call %usr_type%.bat
+goto eof
+:invalid_pass
+echo %Password invalid.
+set /p yn=Would you like to recover your password?
+if yn==y goto revovery else goto start
+pause
+goto eof 
+:invalid_user
+echo That user does not exist
+:invalid_user2
+call registeruser.bat
+:eof
