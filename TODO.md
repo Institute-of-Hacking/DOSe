@@ -1,6 +1,6 @@
 # ToDo List for BatchOS
 
-Make Zhara upload his build
+###Make Zhara upload his build
 
 Finalize user creation
 
@@ -11,3 +11,4 @@ Add actual commands
 Get batman up and running
 
 Implement multi-user functionality
+
