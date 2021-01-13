@@ -1,10 +1,10 @@
 @echo off
 if command == "sakura" goto sakura
-if not exist "%command%.bat" (
+if not exist "commands\%command%.bat" (
     echo Command not found check spelling
     goto eof
 ) else (
-    call "%command%.bat"
+    call "commands\%command%.bat"
     goto eof
 )
 
