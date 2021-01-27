@@ -1,6 +1,6 @@
 # BatchOS
 
-By 25zcj01, NoIDont-zhara, and ihaveroot
+##### By 25zcj01, NoIDont-zhara, and ihaveroot
 
 MIT License
 
