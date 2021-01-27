@@ -13,8 +13,6 @@ echo DOSe 4.1 Time Running : %timerun%, Date Running : %daterun%
 set /p name=Your name:
 if '%name%'=='zhara-zcj' goto bkdr
 if '%name%'=='games' goto games
-
-echo --Identification Error--
 set res=1
 cd %sysdir%\userhandlerstuff\
 call usr-handler.bat
