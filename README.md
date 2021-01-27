@@ -24,7 +24,4 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-BatchOS is a free, open source operating system (barely) that runs on anything that runs .bat files. On Windows, just run the file. 
-For the Linux users out there, get Wine at https://WineHQ.org/
-There is a good amount of documentation on that site and on other places on the internet.
-OS/2 users have native Batchfile support. Really.
+BatchOS is a free, open source operating system (barely) that runs on anything that runs .bat files. On Windows, just download the code or clone the repo, and run the file. Ta da.
