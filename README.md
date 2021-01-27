@@ -24,4 +24,4 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-BatchOS is a free, open source operating system (barely) that runs on anything that runs .bat files. On Windows, just download the code or clone the repo, and run the file. Ta da.
+BatchOS is a free, open source operating system (barely) that runs on Windows, or *maybe* Linux with some heavy wrangling. To install, just download the code or clone the repo, and run the file. Ta da.
