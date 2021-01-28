@@ -1,10 +1,10 @@
 # ToDo List for BatchOS
 
-:white_check_mark: Make Zhara upload his build
+- [x] Make Zhara upload his build
 
 Finalize user creation
 
-:white_check_mark: Improve user files
+- [x] Improve user files
 
 Add actual commands
 
