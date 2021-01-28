@@ -1,7 +1,7 @@
 @echo off	
 set pass=0
-set filename=DOSe4.0-beta.bat
-if not exist "DOSe4.0-beta.bat" (
+set filename=BatchOS.bat
+if not exist "BatchOS.bat" (
 goto relocatecheck
 ) else goto file1exist
 :file1exist
