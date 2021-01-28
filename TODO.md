@@ -2,14 +2,16 @@
 
 - [x] Make Zhara upload his build
 
-Finalize user creation
+- [ ] Finalize user creation
 
 - [x] Improve user files
 
-Add actual commands
+- [ ] Add actual commands
 
-Get batman up and running
+- [ ] Get batman up and running
 
-Implement multi-user functionality
+- [ ] Implement multi-user functionality
 
-Make better website
+- [ ] Make better website
+
+- [ ] Implement Batch-Chat-Room
