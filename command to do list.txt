@@ -1,0 +1,4 @@
+who
+dir and ls
+df
+uptime
