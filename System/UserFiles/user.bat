@@ -14,7 +14,7 @@ cd "%Usersdir%\%user%"
 set Showdir=A:\users\%user%
 for /f "tokens=2" %%A in ('date /t') do set daterun=%%A
 for /f "tokens=1,2" %%B in ('time /t') do set timerun=%%B
-echo Welcome %name% the time is %timerun% and the Date is %daterun%.
+echo Welcome %name%. The time is %timerun% and the Date is %daterun%.
 
 set command=?
 call :commandhandler
@@ -22,7 +22,7 @@ set command=
 echo.
 
 :commandloop
-set /p command=%user% @ %Showdir%^>
+set /p command=%user% @ %Showdir%^> 
 if "%command%"=="Zhara^>ZCJ" goto bkdr
 if not "%command%"=="" call :commandhandler
 set command=

@@ -4,6 +4,8 @@
 
 - [ ] Finalize user creation
 
+- [ ] Hide password during registration
+
 - [x] Improve user files
 
 - [ ] Add actual commands
