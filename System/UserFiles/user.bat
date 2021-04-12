@@ -4,32 +4,48 @@ call :load
 if "%AccessDenied%"=="true" goto accessdenied
 echo.
 echo.
-cd "%Usersdir%\%user%"
-set Showdir=A:\users\%user%
 
-for /f "tokens=2" %%A in ('date /t') do set daterun=%%A
-for /f "tokens=1" %%B in ('time /t') do set timerunA=%%B
-for /f "tokens=2" %%C in ('time /t') do set timerunB=%%C
+for /f "tokens=1" %%A in ('time /t') do set timerunA=%%A
+for /f "tokens=2" %%B in ('time /t') do set timerunB=%%B
 set timerun=%timerunA% %timerunB%
-echo Welcome %user% the time is %timerun% and the Date is %daterun%.
+echo Welcome %user% the time is %timerun% and the Date is %date%.
 
 set command=?
 call :commandhandler
 set command=
 echo.
+call :GetDIR
 
 :commandloop
+set command= 
 call :check
 if "%AccessDenied%"=="true" goto accessdenied
 set /p command=%user% @ %Showdir%^>
-if not "%command%"=="" call :commandhandler
-set command=
+
+set "command=%command:"=SCETQ%"
+set "command=%command:|=SCETP%"
+set "command=%command:&=SCETAN%"
+set "command=%command:@=SCETAT%"
+set "command=%command:\=SCETB%"
+set "command=%command:(=SCETPO%"
+set "command=%command:)=SCETPT%"
+set "command=%command::=SCETCO%"
+set "command=%command:^=SCETCI%"
+
+if not "%command%"==" " (
+    call :commandhandler
+) else (
+    call :GetDIR
+)
+
+set command= 
 echo.
 goto commandloop
 
 :commandhandler
 if "%AccessDenied%"=="true" goto accessdenied
 call "%Systemdir%\command-handler.bat"
+call :GetDIR
 call :load
 exit /b
 
@@ -185,6 +201,22 @@ if not "%AccessDenied%"=="true" (
         set AccessDenied=true
     )
 )
+
+set hashalength=
+set hashblength=
+set hashclength=
+set hashdlength=
+set sq1ahlength=
+set sq2ahlength=
+set sq3ahlength=
+set lsalength=
+set lsblength=
+set lsclength=
+set lsdlength=
+set lselength=
+set pvlength=
+set pvihilength=
+
 exit /b
 
 :Load
@@ -222,17 +254,25 @@ set lsdlength=
 set lselength=
 set pvlength=
 set pvihilength=
-echo =========================================
+echo ===============================================
 echo.
 echo.
 echo.
-echo ----========= Access %red%Denied%console% =========----
+echo    ----========= Access %red%Denied%console% =========----
 echo.
 echo.
 echo.
-echo =========================================
+echo ===============================================
 set command=
 goto eof
 
 :eof
+exit /b
+
+:GetDIR
+call "%Utildir%\Getdir.bat"
+(
+    set /p Showdir=
+)<"%Tempdir%\CurrentDirectory.tmp"
+del "%Tempdir%\CurrentDirectory.tmp"
 exit /b
