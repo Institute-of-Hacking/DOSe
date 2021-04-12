@@ -1,0 +1,9 @@
+Users.bat
+Date.bat
+cd.bat
+login.bat
+Register.bat
+Time.bat
+whoami.bat
+Echo.bat
+sha512sum.bat
